@@ -1,0 +1,598 @@
+[cloudera@quickstart ~]$ hadoop fs -put mammals.txt /user/cloudera/
+put: `/user/cloudera/mammals.txt': File exists
+
+[cloudera@quickstart ~]$ hadoop jar WordCount2.jar WordCount2 /user/cloudera/mammals.txt /user/cloudera/WordCount2Output/
+18/09/08 23:07:13 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+18/09/08 23:07:18 INFO input.FileInputFormat: Total input paths to process : 1
+18/09/08 23:07:18 INFO mapreduce.JobSubmitter: number of splits:1
+18/09/08 23:07:20 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1536466268395_0003
+18/09/08 23:07:21 INFO impl.YarnClientImpl: Submitted application application_1536466268395_0003
+18/09/08 23:07:21 INFO mapreduce.Job: The url to track the job: http://quickstart.cloudera:8088/proxy/application_1536466268395_0003/
+18/09/08 23:07:21 INFO mapreduce.Job: Running job: job_1536466268395_0003
+18/09/08 23:07:47 INFO mapreduce.Job: Job job_1536466268395_0003 running in uber mode : false
+18/09/08 23:07:47 INFO mapreduce.Job:  map 0% reduce 0%
+18/09/08 23:08:23 INFO mapreduce.Job:  map 100% reduce 0%
+18/09/08 23:08:45 INFO mapreduce.Job:  map 100% reduce 100%
+18/09/08 23:08:49 INFO mapreduce.Job: Job job_1536466268395_0003 completed successfully
+18/09/08 23:08:49 INFO mapreduce.Job: Counters: 50
+	File System Counters
+		FILE: Number of bytes read=82122
+		FILE: Number of bytes written=451349
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=200289
+		HDFS: Number of bytes written=59550
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=33020
+		Total time spent by all reduces in occupied slots (ms)=17991
+		Total time spent by all map tasks (ms)=33020
+		Total time spent by all reduce tasks (ms)=17991
+		Total vcore-milliseconds taken by all map tasks=33020
+		Total vcore-milliseconds taken by all reduce tasks=17991
+		Total megabyte-milliseconds taken by all map tasks=33812480
+		Total megabyte-milliseconds taken by all reduce tasks=18422784
+	Map-Reduce Framework
+		Map input records=4301
+		Map output records=30469
+		Map output bytes=312006
+		Map output materialized bytes=82122
+		Input split bytes=122
+		Combine input records=30469
+		Combine output records=5768
+		Reduce input groups=5768
+		Reduce shuffle bytes=82122
+		Reduce input records=5768
+		Reduce output records=5768
+		Spilled Records=11536
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=245
+		CPU time spent (ms)=6100
+		Physical memory (bytes) snapshot=493907968
+		Virtual memory (bytes) snapshot=3134427136
+		Total committed heap usage (bytes)=376438784
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	WordCount2$TokenizerMapper$CountersEnum
+		INPUT_WORDS=30469
+	File Input Format Counters 
+		Bytes Read=200167
+	File Output Format Counters 
+		Bytes Written=59550
+[cloudera@quickstart ~]$
+[cloudera@quickstart ~]$ hadoop fs -ls /user/cloudera/WordCount2Output
+Found 2 items
+-rw-r--r--   1 cloudera cloudera          0 2018-09-08 23:08 /user/cloudera/WordCount2Output/_SUCCESS
+-rw-r--r--   1 cloudera cloudera      59550 2018-09-08 23:08 /user/cloudera/WordCount2Output/part-r-00000
+[cloudera@quickstart ~]$ hadoop fs -cat /user/cloudera/WordCount2Output/part-r-00000
+
+sudden	1
+sufficient	1
+suggested	1
+suggesting	1
+suitable	6
+sumac	4
+sumac"	2
+sumac,	1
+summer	3
+summer,	2
+summer.	2
+summerlike	1
+sundown	2
+sundown.	1
+sundown;	1
+sunset	5
+sunset,	3
+sunset.	4
+sunset;	1
+sunup,	1
+supplements	1
+supply	1
+supply)	1
+supply.	1
+support	10
+support.	1
+supported	3
+supporting	9
+supports	2
+supposed	1
+surface	1
+surfaces	1
+surplus	1
+surprised	1
+surrounded	6
+surrounding	3
+survey	1
+survive	1
+suspect	2
+swamp	1
+sweeping	1
+swooped	1
+swung	1
+symbol	1
+synchrony	1
+synonym	1
+synonymous	1
+synopsis	4
+system	2
+systematic	3
+systems	2
+table	1
+tables	4
+tables.	8
+tadpoles	1
+tail	2
+tail.	4
+tails	1
+tails;	2
+take	1
+taken	85
+taken,	3
+taken--that	1
+taken.	6
+taken;	1
+takes	1
+taking	3
+tall	1
+tall,	1
+talus	9
+talus,	2
+talus;	1
+tame	1
+tangle	2
+tangled	1
+tangles	1
+tax	6
+taxes.	1
+taxonomic	1
+taxonomy	6
+taxus	2
+teleotis=	1
+telephone	1
+temperature	9
+temperature;	1
+temporary	1
+ten	5
+tend	2
+tended	1
+tending	3
+term.	2
+terms	20
+terrain	4
+terrain.	1
+testified	1
+text,	12
+text.	46
+text.]	2
+text:	1
+texture,	1
+than	34
+that	98
+the	1952
+their	34
+them	3
+them,	1
+them.	2
+themselves,	1
+themselves.	1
+then	7
+then,	2
+there	34
+there,	3
+there.	7
+thereby	1
+therefore	1
+therefore,	1
+these	84
+they	51
+thick	5
+thickets	7
+thickets.	1
+thickly	2
+thin	1
+things	2
+third	1
+thirteen	4
+thirtieth	1
+thirty	5
+thirty-nine	1
+thirty-six	1
+this	188
+thorns	5
+thorny	2
+those	14
+though	1
+thought	1
+three	20
+three-inch	1
+three-quarters	1
+thrive	1
+through	17
+throughout	6
+thus	2
+timber	4
+timber.	1
+time	6
+time,	1
+times	6
+times,	2
+tip	1
+tip,	1
+tipping	1
+tips	2
+to	335
+to,	4
+together	3
+together,	1
+together.	1
+told	2
+too	2
+took	9
+toothrow	1
+top	2
+topmost	1
+tops	1
+torridus	9
+torridus_	1
+total	9
+toward	7
+towards	1
+town	1
+towns	1
+traced	1
+tracks	23
+tracks)	1
+tracks,	2
+tract	1
+tracts	11
+trademark	3
+trademark,	3
+trademark.	3
+trail	3
+trail.	2
+trails	1
+trails.	1
+trampling.	1
+transcribe	1
+transcription	1
+transecting	1
+trap	24
+trap,	2
+trap-nights	8
+trapped	45
+trapped,	2
+trapped.	1
+trapped;	1
+trapping	10
+traps	17
+traps,	1
+traps.	1
+travel	3
+traveled	3
+traveling	3
+treatment	1
+tree	32
+treelike	1
+trees	7
+trees,	3
+trees.	8
+trends	2
+tridentata_	2
+trilobata_	2
+trimmed	1
+trip	1
+trouble	1
+truei	9
+truei)	1
+truei_	3
+truei_,	1
+trunks	2
+tunnel	1
+tunnel.	1
+tunnels	1
+turbid	1
+turbinella_	1
+turn	2
+turned	3
+turns,	1
+turtle	1
+turtles	1
+turtles.	1
+twelve	1
+twenty	2
+twenty-two	1
+twigs	2
+twilight,	1
+twist	2
+twisted	1
+two	51
+type	2
+type.	1
+types	4
+types.	1
+typical	14
+typically	2
+ubiquitous	1
+umbrinus.	1
+unable	1
+unaltered	1
+under	18
+undergrowth	1
+understand,	1
+understory,	1
+undetected	1
+undisturbed	1
+unenforceability	1
+uniform	2
+uninhabited	3
+uninhabited.	2
+uninjured	1
+unknown.	1
+unless	3
+unlikely	1
+unlink	1
+unnamed	1
+unnumbered	1
+unobstructed	1
+unsolicited	1
+unsuitable	4
+until	5
+unused	3
+unusual	2
+unusually	1
+up	32
+up,	1
+up-mountain	1
+uplift	1
+uplifts	1
+upon	4
+upper	21
+uppermost	1
+upside	1
+us	2
+use	10
+used	17
+user	2
+user,	1
+using	5
+usual	4
+usually	18
+utilized	1
+valley	4
+valleys	1
+vantage	2
+var.	1
+variation	5
+variation,	1
+variations	1
+varied	1
+varies	1
+variety	2
+various	5
+vary	1
+varying	1
+vast	1
+vegetation	9
+vegetation,	2
+vegetation--usually	1
+vegetation.	2
+vegetational	1
+velifer)	1
+version	2
+very	1
+vicinity	6
+view.	1
+viewed,	1
+viewing,	1
+vineyards,	2
+vineyards.	1
+violates	1
+virginiana=	1
+virginiana_	1
+virginianus	1
+virginianus).	1
+viridis	3
+virus,	1
+visible	1
+visit	2
+visit:	1
+vitifolius_	1
+voices	1
+void	1
+volans	2
+vole	1
+vols.,	1
+volume	2
+volunteer	1
+volunteers	5
+von	3
+vulnerable	2
+walked	2
+walks	1
+walls	1
+walls,	1
+warm	1
+warm,	1
+warrant	1
+warranties	1
+was	228
+wash	9
+wash,	1
+wash.	6
+washes	22
+washes,	7
+washes.	6
+watching	2
+water	2
+water,	2
+water--here	1
+water.	3
+water;	1
+waxwings	1
+way	6
+ways	2
+we	13
+weasels	1
+weasels.	1
+weather	7
+weather,	1
+weather.	1
+web	3
+weed	1
+weeds	1
+weeds,	1
+weeks	1
+weighed	12
+weighing	1
+weight	3
+well	10
+were	241
+were,	1
+were.	1
+west	15
+west,	2
+western	4
+westward	1
+wet	1
+what	2
+whatsoever.	2
+when	17
+whenever	1
+where	61
+whereas	10
+whereupon	1
+wherever	1
+whether	1
+which	60
+while	24
+whirled	2
+white	19
+white-footed	1
+white-tipped	1
+who	7
+whole	1
+whom	1
+wide	4
+wide.	1
+widely	9
+widely,	1
+widespread	1
+widest	3
+wife,	1
+wild	2
+wildcat	1
+wildcats	1
+wildlife.	1
+will	11
+willows,	1
+wind	2
+wind.	1
+windy	2
+wings	2
+winter	12
+winter,	3
+winter.	5
+winters	2
+wire	1
+wires	1
+wish	1
+with	148
+with,	1
+within	13
+without	14
+wood	7
+wooded	2
+wooden	1
+woodland	20
+woodland,	7
+woodland.	9
+woodland:	1
+woodland|	1
+woodpile	1
+woodrat	10
+woodrat.	1
+woodrats	13
+woodrats.	4
+woods	1
+word	1
+work	40
+work,	7
+work.	5
+working	1
+workings	1
+workings,	1
+works	22
+works,	5
+works.	5
+worms	1
+worms)	1
+worn	1
+would	9
+wounds.	1
+wrapping	1
+writer	1
+writing	3
+written	3
+www.gutenberg.org	2
+x	3
+xerophytic,	1
+xi	1
+xii	1
+xiv	1
+yards	4
+year	4
+year,	1
+year.	2
+yearling	4
+years	3
+years,	2
+yellow	27
+yet	4
+yielded	9
+yielding	1
+you	50
+you!)	1
+young	2
+young.	1
+your	9
+yucca	4
+yucca,	2
+yucca.	3
+yuccas	2
+yumanensis	1
+zones	3
+|	223
+|1.	1
+|11.2	1
+|12.5	1
+|2.	1
+|3	2
+|3.	1
+|4	1
+|4.	1
+|5.	1
+|6.	1
+|7.	1
+|January	2
+|March	1
+|San	2
+|Thompson	1
+
+[cloudera@quickstart ~]$ hadoop fs -get /user/cloudera/WordCount2Output/part-r-00000 WordCount2.txt
+[cloudera@quickstart ~]$ 
+ 
+
+

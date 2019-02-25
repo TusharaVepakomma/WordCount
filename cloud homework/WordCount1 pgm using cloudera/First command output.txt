@@ -1,0 +1,2 @@
+[cloudera@quickstart ~]$ hadoop fs -put mammals.txt /user/cloudera/
+ddput: `/user/cloudera/mammals.txt': File exists
